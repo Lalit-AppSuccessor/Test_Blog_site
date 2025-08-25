@@ -11,7 +11,7 @@ const App = () => {
   }, []);
 
   const fetchComments = async () => {
-    const res = await fetch("http://localhost:5000/comments");
+    const res = await fetch("https://test-blog-site-p090.onrender.com/comments");
     const data = await res.json();
     setAllComment(data);
   };
@@ -19,7 +19,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !comment) return;
-    await fetch("http://localhost:5000/comments", {
+    await fetch("https://test-blog-site-p090.onrender.com/comments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, comment }),
